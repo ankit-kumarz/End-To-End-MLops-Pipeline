@@ -1,0 +1,144 @@
+name: Model Training Pipeline
+
+# Trigger on:
+# 1. Manual dispatch
+# 2. Successful data validation
+# 3. Schedule (weekly)
+on:
+  workflow_dispatch:
+    inputs:
+      algorithm:
+        description: 'Model algorithm to train'
+        required: true
+        default: 'random_forest'
+        type: choice
+        options:
+          - random_forest
+          - logistic_regression
+          - xgboost
+  workflow_run:
+    workflows: ["Data Validation"]
+    types:
+      - completed
+  schedule:
+    # Run every Sunday at 2 AM UTC
+    - cron: '0 2 * * 0'
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    # Only run if data validation succeeded or manual trigger
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Set up DVC
+      run: |
+        pip install dvc
+    
+    - name: Generate/Pull data
+      run: |
+        # For demo, generate sample data
+        python src/generate_data.py
+    
+    - name: Run DVC pipeline
+      run: |
+        dvc repro
+      env:
+        MLFLOW_TRACKING_URI: file:./mlruns
+    
+    - name: Extract model metrics
+      id: metrics
+      run: |
+        # Extract metrics from metadata file
+        if [ -f "models/metadata_random_forest.json" ]; then
+          TEST_ACC=$(python -c "import json; print(json.load(open('models/metadata_random_forest.json'))['metrics']['test_accuracy'])")
+          echo "test_accuracy=$TEST_ACC" >> $GITHUB_OUTPUT
+          echo "✅ Test Accuracy: $TEST_ACC"
+        fi
+    
+    - name: Check model performance
+      run: |
+        # Fail if accuracy is too low
+        ACCURACY=${{ steps.metrics.outputs.test_accuracy }}
+        THRESHOLD=0.90
+        
+        if (( $(echo "$ACCURACY < $THRESHOLD" | bc -l) )); then
+          echo "❌ Model accuracy ($ACCURACY) is below threshold ($THRESHOLD)"
+          exit 1
+        else
+          echo "✅ Model accuracy ($ACCURACY) meets threshold ($THRESHOLD)"
+        fi
+    
+    - name: Save model artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: trained-model
+        path: |
+          models/*.pkl
+          models/*.json
+        retention-days: 90
+    
+    - name: Save MLflow artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: mlflow-runs
+        path: mlruns/
+        retention-days: 30
+    
+    - name: Create training report
+      run: |
+        echo "# Model Training Report" > training_report.md
+        echo "" >> training_report.md
+        echo "**Date:** $(date)" >> training_report.md
+        echo "**Commit:** ${{ github.sha }}" >> training_report.md
+        echo "**Branch:** ${{ github.ref_name }}" >> training_report.md
+        echo "" >> training_report.md
+        echo "## Metrics" >> training_report.md
+        echo "- Test Accuracy: ${{ steps.metrics.outputs.test_accuracy }}" >> training_report.md
+        
+        if [ -f "models/metadata_random_forest.json" ]; then
+          echo "" >> training_report.md
+          echo "## Full Metrics" >> training_report.md
+          echo "\`\`\`json" >> training_report.md
+          python -c "import json; print(json.dumps(json.load(open('models/metadata_random_forest.json'))['metrics'], indent=2))" >> training_report.md
+          echo "\`\`\`" >> training_report.md
+        fi
+    
+    - name: Upload training report
+      uses: actions/upload-artifact@v3
+      with:
+        name: training-report
+        path: training_report.md
+        retention-days: 90
+    
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const report = fs.readFileSync('training_report.md', 'utf8');
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: report
+          });

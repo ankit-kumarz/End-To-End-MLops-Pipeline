@@ -1,0 +1,136 @@
+name: Deploy API
+
+# Trigger on successful model training or manual dispatch
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Model Training Pipeline"]
+    types:
+      - completed
+    branches: [main, master]
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Download model artifacts
+      if: github.event_name == 'workflow_run'
+      uses: actions/download-artifact@v3
+      with:
+        name: trained-model
+        path: models/
+    
+    - name: Test API endpoints
+      run: |
+        # Start API server in background
+        python -m uvicorn src.serve:app --host 0.0.0.0 --port 8000 &
+        API_PID=$!
+        
+        # Wait for server to start
+        echo "Waiting for API to start..."
+        sleep 10
+        
+        # Test health endpoint
+        curl -f http://localhost:8000/health || exit 1
+        echo "✅ Health check passed"
+        
+        # Test prediction endpoint
+        curl -f -X POST http://localhost:8000/predict \
+          -H "Content-Type: application/json" \
+          -d '{"feature_1": 0.5, "feature_2": 1.2, "feature_3": -0.3, "feature_4": 75.5, "feature_5": 5}' \
+          || exit 1
+        echo "✅ Prediction endpoint working"
+        
+        # Kill server
+        kill $API_PID
+    
+    - name: Build deployment package
+      run: |
+        mkdir -p deploy
+        cp -r src config models requirements.txt deploy/
+        echo "✅ Deployment package created"
+    
+    - name: Upload deployment package
+      uses: actions/upload-artifact@v3
+      with:
+        name: api-deployment
+        path: deploy/
+        retention-days: 30
+    
+    - name: Deployment summary
+      run: |
+        echo "# Deployment Summary" > deployment_summary.md
+        echo "" >> deployment_summary.md
+        echo "**Environment:** Staging" >> deployment_summary.md
+        echo "**Date:** $(date)" >> deployment_summary.md
+        echo "**Commit:** ${{ github.sha }}" >> deployment_summary.md
+        echo "" >> deployment_summary.md
+        echo "## API Endpoints" >> deployment_summary.md
+        echo "- Health: /health" >> deployment_summary.md
+        echo "- Predict: POST /predict" >> deployment_summary.md
+        echo "- Batch: POST /predict/batch" >> deployment_summary.md
+        echo "- Model Info: /model/info" >> deployment_summary.md
+        echo "" >> deployment_summary.md
+        echo "## Next Steps" >> deployment_summary.md
+        echo "1. Verify staging deployment" >> deployment_summary.md
+        echo "2. Run integration tests" >> deployment_summary.md
+        echo "3. Promote to production if tests pass" >> deployment_summary.md
+    
+    - name: Create deployment notification
+      run: |
+        echo "::notice::API deployed to staging environment successfully!"
+
+  # Production deployment (requires manual approval)
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    environment:
+      name: production
+      url: https://your-api-url.com
+    
+    steps:
+    - name: Download deployment package
+      uses: actions/download-artifact@v3
+      with:
+        name: api-deployment
+        path: deploy/
+    
+    - name: Deploy to production
+      run: |
+        echo "🚀 Deploying to production..."
+        echo "This is where you'd deploy to your cloud provider:"
+        echo "- Azure App Service"
+        echo "- AWS Lambda"
+        echo "- Google Cloud Run"
+        echo "- Kubernetes cluster"
+        echo ""
+        echo "For now, this is a placeholder for your deployment script."
+    
+    - name: Verify production deployment
+      run: |
+        echo "✅ Production deployment verification"
+        echo "In production, you would:"
+        echo "1. Check health endpoint"
+        echo "2. Run smoke tests"
+        echo "3. Monitor error rates"
+        echo "4. Set up rollback if needed"
+    
+    - name: Deployment complete
+      run: |
+        echo "::notice::Production deployment completed successfully! 🎉"

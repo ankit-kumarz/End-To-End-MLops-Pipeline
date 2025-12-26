@@ -1,0 +1,58 @@
+name: Scheduled Model Retraining
+
+# Automated retraining schedule
+on:
+  schedule:
+    # Every Monday at 3 AM UTC
+    - cron: '0 3 * * 1'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  check-data-drift:
+    runs-on: ubuntu-latest
+    outputs:
+      should_retrain: ${{ steps.drift_check.outputs.retrain }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install scipy
+    
+    - name: Check for data drift
+      id: drift_check
+      run: |
+        # Generate current data
+        python src/generate_data.py
+        
+        # Run validation (includes drift check)
+        python src/validate_data.py
+        
+        # For demo, always trigger retraining
+        # In production, check drift metrics and decide
+        echo "retrain=true" >> $GITHUB_OUTPUT
+        echo "✅ Data drift check complete"
+  
+  retrain-if-needed:
+    needs: check-data-drift
+    if: needs.check-data-drift.outputs.should_retrain == 'true'
+    uses: ./.github/workflows/model-training.yml
+    
+  notify-no-retrain:
+    needs: check-data-drift
+    if: needs.check-data-drift.outputs.should_retrain != 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: No retraining needed
+      run: |
+        echo "::notice::No significant data drift detected. Skipping retraining."

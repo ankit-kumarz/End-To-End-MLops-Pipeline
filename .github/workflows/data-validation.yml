@@ -1,0 +1,84 @@
+name: Data Validation
+
+# Trigger when data files change or manually
+on:
+  push:
+    paths:
+      - 'data/**'
+      - 'src/validate_data.py'
+      - 'src/generate_data.py'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  validate-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Set up DVC
+      run: |
+        pip install dvc
+    
+    # For demo purposes, generate sample data
+    # In production, you'd pull from DVC remote storage
+    - name: Generate sample data
+      run: |
+        python src/generate_data.py
+    
+    - name: Run data validation
+      id: validation
+      run: |
+        python src/validate_data.py
+        echo "validation_status=success" >> $GITHUB_OUTPUT
+      continue-on-error: true
+    
+    - name: Check validation result
+      if: steps.validation.outcome == 'failure'
+      run: |
+        echo "❌ Data validation failed!"
+        echo "Please check data quality issues before proceeding."
+        exit 1
+    
+    - name: Validation passed
+      if: steps.validation.outcome == 'success'
+      run: |
+        echo "✅ Data validation passed!"
+        echo "Data is ready for training."
+    
+    - name: Create validation report
+      if: always()
+      run: |
+        echo "# Data Validation Report" > validation_report.md
+        echo "" >> validation_report.md
+        echo "**Date:** $(date)" >> validation_report.md
+        echo "**Status:** ${{ steps.validation.outcome }}" >> validation_report.md
+        echo "" >> validation_report.md
+        
+        if [ -f "data/processed/reference_stats.json" ]; then
+          echo "**Statistics:**" >> validation_report.md
+          echo "\`\`\`json" >> validation_report.md
+          cat data/processed/reference_stats.json >> validation_report.md
+          echo "\`\`\`" >> validation_report.md
+        fi
+    
+    - name: Upload validation report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: validation-report
+        path: validation_report.md
+        retention-days: 30
