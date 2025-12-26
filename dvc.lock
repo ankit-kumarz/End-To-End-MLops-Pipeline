@@ -48,3 +48,31 @@ stages:
       hash: md5
       md5: bd07eb2634f05ac8f629d4fcb7da15f4
       size: 1263
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: fe4a69b5f9e8906eaed6447b0bb10b51
+      size: 703
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 127441cfb8778a43edb562cd5ae70f82
+      size: 47609
+    - path: data/processed/train.csv
+      hash: md5
+      md5: ad313242fcb82699978dcd6e03ec6169
+      size: 189784
+    - path: src/train.py
+      hash: md5
+      md5: 9063d5569b7fadb39862edcc938adc99
+      size: 11402
+    outs:
+    - path: models/metadata_random_forest.json
+      hash: md5
+      md5: e8cb8a3490bb1d217de73baa7942acfe
+      size: 762
+    - path: models/model_random_forest.pkl
+      hash: md5
+      md5: 7e73744cd6f6a46ccf9eaeb826690c93
+      size: 431017

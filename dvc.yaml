@@ -22,3 +22,16 @@ stages:
       - data/processed/metadata.json
       - models/scaler.pkl
     desc: "Clean, engineer features, and split data"
+  
+  # Stage 3: Model Training
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed/train.csv
+      - data/processed/test.csv
+      - config/config.yaml
+    outs:
+      - models/model_random_forest.pkl
+      - models/metadata_random_forest.json
+    desc: "Train model with MLflow tracking"
