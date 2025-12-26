@@ -1,0 +1,24 @@
+stages:
+  # Stage 1: Data Validation
+  validate:
+    cmd: python src/validate_data.py
+    deps:
+      - src/validate_data.py
+      - data/raw/dataset.csv
+    outs:
+      - data/processed/reference_stats.json
+    desc: "Validate raw data quality and schema"
+  
+  # Stage 2: Data Preprocessing
+  preprocess:
+    cmd: python src/data_pipeline.py
+    deps:
+      - src/data_pipeline.py
+      - data/raw/dataset.csv
+      - config/config.yaml
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+      - data/processed/metadata.json
+      - models/scaler.pkl
+    desc: "Clean, engineer features, and split data"
