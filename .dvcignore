@@ -1,0 +1,3 @@
+# Ignore DVC internal files
+.dvc/tmp
+.dvc/cache

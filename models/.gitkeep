@@ -1,0 +1,2 @@
+# This file keeps the models directory in Git while ignoring actual model files
+# Model artifacts are tracked by MLflow, not Git
