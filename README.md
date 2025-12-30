@@ -419,6 +419,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Ankit Kumar**
 - GitHub: [@ankit-kumarz](https://github.com/ankit-kumarz)
+- Email: ankitrajj1068@gmail.com
 
 ## 🙏 Acknowledgments
 
