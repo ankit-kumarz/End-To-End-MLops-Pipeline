@@ -156,7 +156,7 @@ curl -X POST http://localhost:8000/predict \
   }'
 ```
 
-## 🧪 Running Tests
+## 🧪 Running Tests 
 
 ```bash
 # Run all tests
