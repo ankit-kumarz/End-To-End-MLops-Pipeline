@@ -145,7 +145,7 @@ uvicorn src.serve:app --reload --port 8000
 curl http://localhost:8000/health
 
 # Make prediction
-curl -X POST http://localhost:8000/predict \
+curl -X POST http://localhost:8000/predict \ 
   -H "Content-Type: application/json" \
   -d '{
     "feature_1": 0.5,
