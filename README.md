@@ -304,7 +304,7 @@ Content-Type: application/json
 
 ### CI Tests
 - Triggers: Every push and pull request
-- Actions: Run pytest, lint code, validate configs
+- Actions: Run pytest, lint code, validate configs 
 
 ### Data Validation
 - Triggers: Data file changes
