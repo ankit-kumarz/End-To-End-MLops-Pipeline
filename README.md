@@ -423,9 +423,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Built with industry-standard MLOps practices
-- Inspired by real-world production systems
-- Designed for learning and interview preparation
+- Built with industry-standard MLOps practices.
+- Inspired by real-world production systems.
+- Designed for learning and interview preparation.
 
 ## 📧 Contact
 
