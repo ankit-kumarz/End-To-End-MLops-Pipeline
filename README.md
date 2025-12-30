@@ -90,7 +90,7 @@ pip install -r requirements.txt
 ```bash
 dvc init
 dvc repro  # Run the entire pipeline
-```
+``` 
 
 ## 🏃 Quick Start
 
