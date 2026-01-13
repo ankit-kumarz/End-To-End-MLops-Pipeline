@@ -154,7 +154,7 @@ curl -X POST http://localhost:8000/predict \
     "feature_4": 75.5,
     "feature_5": 5
   }'
-```
+``` 
 
 ## 🧪 Running Tests 
 
