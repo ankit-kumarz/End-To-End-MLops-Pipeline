@@ -285,7 +285,7 @@ Content-Type: application/json
 
 ### Batch Prediction
 ```
-POST /predict/batch
+POST /predict/batch 
 Content-Type: application/json
 
 {
