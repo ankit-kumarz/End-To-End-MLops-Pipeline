@@ -83,7 +83,7 @@ source venv/bin/activate
 
 ```bash
 pip install -r requirements.txt
-```
+``` 
 
 ### 4. Initialize DVC
 
