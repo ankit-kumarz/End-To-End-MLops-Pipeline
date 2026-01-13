@@ -57,7 +57,7 @@ This project demonstrates a complete MLOps system featuring:
 - Python 3.12+
 - Git
 - Virtual environment (venv)
-
+ 
 ## 🔧 Installation
 
 ### 1. Clone the Repository
