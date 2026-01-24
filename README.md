@@ -12,7 +12,7 @@ A production-ready MLOps pipeline implementing industry best practices for machi
 This project demonstrates a complete MLOps system featuring:  
 
 - **Data Versioning** with DVC (Data Version Control) 
-- **Automated ML Pipelines** with reproducible workflows
+- **Automated ML Pipelines** with reproducible workflows 
 - **Experiment Tracking** using MLflow
 - **Model Serving** via FastAPI REST API
 - **CI/CD Automation** with GitHub Actions
