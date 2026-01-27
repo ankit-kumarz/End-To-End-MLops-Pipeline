@@ -76,7 +76,7 @@ python -m venv venv
 
 # Linux/Mac
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate 
 ```
 
 ### 3. Install Dependencies
