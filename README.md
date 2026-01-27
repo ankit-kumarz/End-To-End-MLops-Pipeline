@@ -64,7 +64,7 @@ This project demonstrates a complete MLOps system featuring:
 
 ```bash
 git clone https://github.com/ankit-kumarz/End-To-End-MLops-Pipeline.git
-cd End-To-End-MLops-Pipeline
+cd End-To-End-MLops-Pipeline 
 ```
 
 ### 2. Create Virtual Environment
