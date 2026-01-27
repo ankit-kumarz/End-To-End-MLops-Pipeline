@@ -128,7 +128,7 @@ mlflow ui --port 5000
 
 ### Start API Server 
 
-```bash
+```bash 
 # Method 1: Direct
 python src/serve.py
 
