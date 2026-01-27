@@ -26,7 +26,7 @@ This project demonstrates a complete MLOps system featuring:
 - Automated data validation (schema, nulls, ranges, drift detection)
 - Data preprocessing pipeline with feature engineering
 
-### ✅ Model Training
+### ✅ Model Training 
 - MLflow experiment tracking with full metrics logging
 - Cross-validation and performance evaluation
 - Random Forest classifier achieving **99.5% test accuracy**
