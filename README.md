@@ -71,7 +71,7 @@ cd End-To-End-MLops-Pipeline
    
 ```bash
 # Windows
-python -m venv venv
+python -m venv venv 
 .\venv\Scripts\activate
 
 # Linux/Mac
