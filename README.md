@@ -8,7 +8,7 @@
 A production-ready MLOps pipeline implementing industry best practices for machine learning workflows, from data versioning to model deployment with automated CI/CD.
 
 ## 🎯 Overview 
-
+ 
 This project demonstrates a complete MLOps system featuring:  
  
 - **Data Versioning** with DVC (Data Version Control) 
