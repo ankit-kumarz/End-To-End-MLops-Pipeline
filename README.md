@@ -74,7 +74,7 @@ cd End-To-End-MLops-Pipeline
 python -m venv venv 
 .\venv\Scripts\activate
 
-# Linux/Mac
+# Linux/Mac 
 python3 -m venv venv
 source venv/bin/activate 
 ```
