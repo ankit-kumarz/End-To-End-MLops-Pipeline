@@ -60,7 +60,7 @@ This project demonstrates a complete MLOps system featuring:
  
 ## 🔧 Installation 
 
-### 1. Clone the Repository
+### 1. Clone the Repository 
 
 ```bash
 git clone https://github.com/ankit-kumarz/End-To-End-MLops-Pipeline.git
