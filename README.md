@@ -120,7 +120,7 @@ python src/train.py
 ```
 
 ### Start MLflow UI 
-
+ 
 ```bash
 mlflow ui --port 5000
 # Visit: http://localhost:5000
