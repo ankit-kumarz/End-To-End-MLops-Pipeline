@@ -14,7 +14,7 @@ This project demonstrates a complete MLOps system featuring:
 - **Data Versioning** with DVC (Data Version Control) 
 - **Automated ML Pipelines** with reproducible workflows 
 - **Experiment Tracking** using MLflow
-- **Model Serving** via FastAPI REST API 
+- **Model Serving** via FastAPI REST API  
 - **CI/CD Automation** with GitHub Actions
 - **Comprehensive Testing** with pytest  
 - **Production-Ready Architecture** with multi-stage deployment
