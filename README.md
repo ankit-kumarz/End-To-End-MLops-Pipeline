@@ -24,7 +24,7 @@ This project demonstrates a complete MLOps system featuring:
 ### ✅ Data Management
 - DVC for data versioning and tracking
 - Automated data validation (schema, nulls, ranges, drift detection)
-- Data preprocessing pipeline with feature engineering
+- Data preprocessing pipeline with feature engineering 
  
 ### ✅ Model Training 
 - MLflow experiment tracking with full metrics logging
