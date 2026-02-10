@@ -19,7 +19,7 @@ This project demonstrates a complete MLOps system featuring:
 - **Comprehensive Testing** with pytest  
 - **Production-Ready Architecture** with multi-stage deployment
 
-## 🚀 Features
+## 🚀 Features 
 
 ### ✅ Data Management
 - DVC for data versioning and tracking
