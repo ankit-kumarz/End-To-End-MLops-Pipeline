@@ -51,7 +51,7 @@ This project demonstrates a complete MLOps system featuring:
 - Data validation tests
 - API endpoint tests 
 - Code coverage tracking 
-
+ 
 ## 📋 Prerequisites 
 
 - Python 3.12  
