@@ -173,7 +173,7 @@ pytest tests/test_data_pipeline.py -v
 
 ```
 End-To-End-MLops-Pipeline/
-├── .github/
+├── .github/ 
 │   └── workflows/          # GitHub Actions CI/CD workflows
 │       ├── ci-tests.yml            # Automated testing
 │       ├── data-validation.yml     # Data quality checks
