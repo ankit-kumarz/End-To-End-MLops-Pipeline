@@ -24,7 +24,7 @@ wheels/
 *.egg
 
 # Jupyter Notebook
-.ipynb_checkpoints
+.ipynb_checkpoints 
 *.ipynb_checkpoints/
 
 # Environment variables
