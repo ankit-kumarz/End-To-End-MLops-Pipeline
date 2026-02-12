@@ -132,7 +132,7 @@ mlflow ui --port 5000
 # Method 1: Direct
 python src/serve.py
 
-# Method 2: With uvicorn (recommended)
+# Method 2: With uvicorn (recommended) 
 uvicorn src.serve:app --reload --port 8000 
 
 # Visit: http://localhost:8000/docs
