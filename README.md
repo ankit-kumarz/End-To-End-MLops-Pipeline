@@ -103,7 +103,7 @@ python src/generate_data.py
 ### Run Data Pipeline
 
 ```bash
-# Validate data
+# Validate data 
 python src/validate_data.py
 
 # Preprocess data
