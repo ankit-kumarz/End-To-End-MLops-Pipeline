@@ -110,7 +110,7 @@ python src/validate_data.py
 python src/data_pipeline.py 
 
 # Or run the entire DVC pipeline
-dvc repro  
+dvc repro   
 ```
 
 ### Train Model
