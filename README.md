@@ -186,7 +186,7 @@ End-To-End-MLops-Pipeline/
 │
 ├── data/
 │   ├── raw/                # Raw data (DVC tracked)
-│   └── processed/          # Processed data
+│   └── processed/          # Processed data 
 │
 ├── models/                 # Trained models and artifacts
 │   ├── model_random_forest.pkl
