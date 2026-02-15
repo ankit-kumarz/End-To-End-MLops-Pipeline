@@ -33,7 +33,7 @@ This project demonstrates a complete MLOps system featuring:
 - Hyperparameter configuration via YAML
 
 ### ✅ Model Serving
-- FastAPI REST API with automatic documentation
+- FastAPI REST API with automatic documentation 
 - Input validation using Pydantic
 - Health checks and model info endpoints
 - Batch prediction support
