@@ -29,7 +29,7 @@ This project demonstrates a complete MLOps system featuring:
 ### ✅ Model Training 
 - MLflow experiment tracking with full metrics logging
 - Cross-validation and performance evaluation
-- Random Forest classifier achieving **99.5% test accuracy**
+- Random Forest classifier achieving **99.5% test accuracy** 
 - Hyperparameter configuration via YAML
 
 ### ✅ Model Serving
