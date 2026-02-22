@@ -39,7 +39,7 @@ This project demonstrates a complete MLOps system featuring:
 - Batch prediction support
 - Swagger UI at `/docs`
  
-### ✅ CI/CD Pipeline 
+### ✅ CI/CD Pipeline  
 - Automated testing on every push
 - Data validation workflows 
 - Model training with performance thresholds 
