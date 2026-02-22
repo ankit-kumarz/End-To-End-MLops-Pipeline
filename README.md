@@ -42,7 +42,7 @@ This project demonstrates a complete MLOps system featuring:
 ### ✅ CI/CD Pipeline  
 - Automated testing on every push
 - Data validation workflows 
-- Model training with performance thresholds 
+- Model training with performance thresholds  
 - Multi-stage deployment (Staging → Production) 
 - Scheduled retraining (weekly)
 
