@@ -31,7 +31,7 @@ This project demonstrates a complete MLOps system featuring:
 - Cross-validation and performance evaluation
 - Random Forest classifier achieving **99.5% test accuracy** 
 - Hyperparameter configuration via YAML
-
+ 
 ### ✅ Model Serving
 - FastAPI REST API with automatic documentation  
 - Input validation using Pydantic
