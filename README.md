@@ -34,7 +34,7 @@ This project demonstrates a complete MLOps system featuring:
  
 ### ✅ Model Serving
 - FastAPI REST API with automatic documentation  
-- Input validation using Pydantic 
+- Input validation using Pydantic  
 - Health checks and model info endpoints
 - Batch prediction support
 - Swagger UI at `/docs`
