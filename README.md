@@ -63,7 +63,7 @@ This project demonstrates a complete MLOps system featuring:
 ### 1. Clone the Repository 
 
 ```bash 
-git clone https://github.com/ankit-kumarz/End-To-End-MLops-Pipeline.git 
+git clone https://github.com/ankit-kumarz/End-To-End-MLops-Pipeline.git  
 cd End-To-End-MLops-Pipeline  
 ```
 
