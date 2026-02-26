@@ -53,7 +53,7 @@ This project demonstrates a complete MLOps system featuring:
 - Code coverage tracking  
  
 ## 📋 Prerequisites 
- 
+  
 - Python 3.12    
 - Git 
 - Virtual environment (venv) 
