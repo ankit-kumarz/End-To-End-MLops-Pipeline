@@ -44,7 +44,7 @@ This project demonstrates a complete MLOps system featuring:
 - Data validation workflows 
 - Model training with performance thresholds  
 - Multi-stage deployment (Staging → Production) 
-- Scheduled retraining (weekly)
+- Scheduled retraining (weekly) 
 
 ### ✅ Testing
 - Unit tests for data pipeline
