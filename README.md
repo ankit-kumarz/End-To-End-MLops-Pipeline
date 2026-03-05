@@ -67,7 +67,7 @@ git clone https://github.com/ankit-kumarz/End-To-End-MLops-Pipeline.git
 cd End-To-End-MLops-Pipeline  
 ``` 
 
-### 2. Create Virtual Environment
+### 2. Create Virtual Environment 
     
 ```bash
 # Windows
