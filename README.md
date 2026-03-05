@@ -6,7 +6,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.127.1-green.svg)](https://fastapi.tiangolo.com/) 
 
 A production-ready MLOps pipeline implementing industry best practices for machine learning workflows, from data versioning to model deployment with automated CI/CD.
-
+ 
 ## 🎯 Overview 
     
 This project demonstrates a complete MLOps system featuring:     
