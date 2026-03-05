@@ -101,7 +101,7 @@ python src/generate_data.py
 ```
  
 ### Run Data Pipeline
-
+ 
 ```bash
 # Validate data 
 python src/validate_data.py
