@@ -40,7 +40,7 @@ This project demonstrates a complete MLOps system featuring:
 - Swagger UI at `/docs`
   
 ### ✅ CI/CD Pipeline  
-- Automated testing on every push
+ Automated testing on every push
 - Data validation workflows  
 - Model training with performance thresholds    
 - Multi-stage deployment (Staging → Production)  
