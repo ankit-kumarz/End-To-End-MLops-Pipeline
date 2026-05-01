@@ -59,7 +59,7 @@ This project demonstrates a complete MLOps system featuring:
 - Virtual environment (venv)   
    
 ## 🔧 Installation 
-
+ 
 ### 1. Clone the Repository 
 
 ```bash 
