@@ -22,7 +22,7 @@ This project demonstrates a complete MLOps system featuring:
 ## 🚀 Features  
  
 ### ✅ Data Management
-- DVC for data versioning and tracking 
+- DVC for data versioning and tracking  
 - Automated data validation (schema, nulls, ranges, drift detection)  
 - Data preprocessing pipeline with feature engineering   
  
