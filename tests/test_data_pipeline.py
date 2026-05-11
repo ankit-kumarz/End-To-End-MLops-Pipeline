@@ -21,7 +21,7 @@ class TestDataPipeline:
         """Test that clean_data removes null values"""
         # Create test data with nulls
         df = pd.DataFrame({
-            'feature_1': [1.0, 2.0, np.nan, 4.0],
+            'feature_1': [1.0, 2.0, np.nan, 4.0], 
             'feature_2': [5.0, 6.0, 7.0, 8.0],
             'target': [0, 1, 0, 1]
         })
