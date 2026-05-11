@@ -65,7 +65,7 @@ class TestDataPipeline:
         expected_features = [
             'feature_1_squared',
             'feature_2_squared',
-            'feature_1_x_feature_2',
+            'feature_1_x_feature_2', 
             'feature_1_x_feature_4',
             'feature_4_per_feature_5',
             'feature_4_log',
