@@ -11,7 +11,7 @@ import sys
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 
-from data_pipeline import clean_data, engineer_features
+from data_pipeline import clean_data, engineer_features 
 
 
 class TestDataPipeline:
