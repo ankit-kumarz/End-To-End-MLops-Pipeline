@@ -58,7 +58,7 @@ This project demonstrates a complete MLOps system featuring:
 - Git 
 - Virtual environment (venv)   
    
-## 🔧 Installation 
+## 🔧 Installation  
  
 ### 1. Clone the Repository 
 
