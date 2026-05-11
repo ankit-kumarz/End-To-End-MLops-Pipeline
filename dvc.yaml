@@ -22,7 +22,7 @@ stages:
       - data/processed/metadata.json
       - models/scaler.pkl
     desc: "Clean, engineer features, and split data"
-  
+   
   # Stage 3: Model Training
   train:
     cmd: python src/train.py
