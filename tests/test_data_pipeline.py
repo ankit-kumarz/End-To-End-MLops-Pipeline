@@ -42,7 +42,7 @@ class TestDataPipeline:
             'target': [0, 1, 0, 1]
         })
         
-        df_clean = clean_data(df)
+        df_clean = clean_data(df) 
         
         # Check no duplicates
         assert len(df_clean) == len(df_clean.drop_duplicates())
