@@ -48,7 +48,7 @@ class TestDataPipeline:
         assert len(df_clean) == len(df_clean.drop_duplicates())
     
     def test_engineer_features_creates_expected_features(self):
-        """Test that feature engineering creates all expected features"""
+        """Test that feature engineering creates all expected features""" 
         # Create test data
         df = pd.DataFrame({
             'feature_1': [1.0, 2.0],
