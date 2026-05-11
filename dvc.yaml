@@ -6,7 +6,7 @@ stages:
       - src/validate_data.py
       - data/raw/dataset.csv
     outs:
-      - data/processed/reference_stats.json
+      - data/processed/reference_stats.json 
     desc: "Validate raw data quality and schema" 
   
   # Stage 2: Data Preprocessing
