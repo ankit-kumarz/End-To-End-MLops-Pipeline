@@ -10,7 +10,7 @@ stages:
     desc: "Validate raw data quality and schema" 
   
   # Stage 2: Data Preprocessing
-  preprocess:
+  preprocess: 
     cmd: python src/data_pipeline.py
     deps:
       - src/data_pipeline.py
