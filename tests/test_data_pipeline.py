@@ -91,7 +91,7 @@ class TestDataPipeline:
         df_features = engineer_features(df)
         
         # Check polynomial features
-        assert df_features['feature_1_squared'].iloc[0] == 4.0
+        assert df_features['feature_1_squared'].iloc[0] == 4.0 
         assert df_features['feature_2_squared'].iloc[0] == 9.0
     
     def test_engineer_features_interactions(self):
