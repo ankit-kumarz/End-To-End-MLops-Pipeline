@@ -7,7 +7,7 @@ stages:
       - data/raw/dataset.csv
     outs:
       - data/processed/reference_stats.json
-    desc: "Validate raw data quality and schema"
+    desc: "Validate raw data quality and schema" 
   
   # Stage 2: Data Preprocessing
   preprocess:
