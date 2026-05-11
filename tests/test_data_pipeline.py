@@ -118,7 +118,7 @@ class TestDataPipeline:
             'feature_2': [0.0],
             'feature_3': [0.0],
             'feature_4': [0.0],
-            'feature_5': [1],
+            'feature_5': [1], 
             'target': [0]
         })
         
