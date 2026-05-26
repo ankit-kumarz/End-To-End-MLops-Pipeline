@@ -5,7 +5,7 @@
 [![MLflow](https://img.shields.io/badge/MLflow-3.8.0-blue.svg)](https://mlflow.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.127.1-green.svg)](https://fastapi.tiangolo.com/) 
 
-A production-ready MLOps pipeline implementing industry best practices for machine learning workflows, from data versioning to model deployment with automated CI/CD.
+A production-ready MLOps pipeline implementing industry best practices for machine learning workflows, from data versioning to model deployment with automated CI/CD. 
  
 ## 🎯 Overview 
        
