@@ -109,7 +109,7 @@ python src/validate_data.py
 # Preprocess data
 python src/data_pipeline.py 
 
-# Or run the entire DVC pipeline
+# Or run the entire DVC pipeline 
 dvc repro   
 ```
 
