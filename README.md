@@ -147,7 +147,7 @@ curl http://localhost:8000/health
 # Make prediction
 curl -X POST http://localhost:8000/predict \ 
   -H "Content-Type: application/json" \
-  -d '{
+  -d '{ 
     "feature_1": 0.5,
     "feature_2": 1.2,
     "feature_3": -0.3,
