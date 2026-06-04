@@ -49,7 +49,7 @@ This project demonstrates a complete MLOps system featuring:
 ### ✅ Testing
 - Unit tests for data pipeline
 - Data validation tests  
-- API endpoint tests  
+- API endpoint tests   
 - Code coverage tracking  
  
 ## 📋 Prerequisites 
