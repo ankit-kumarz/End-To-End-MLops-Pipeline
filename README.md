@@ -69,7 +69,7 @@ cd End-To-End-MLops-Pipeline
 
 ### 2. Create Virtual Environment 
     
-```bash
+```bash 
 # Windows
 python -m venv venv  
 .\venv\Scripts\activate  
