@@ -19,7 +19,7 @@ stages:
     outs:
       - data/processed/train.csv
       - data/processed/test.csv
-      - data/processed/metadata.json
+      - data/processed/metadata.json 
       - models/scaler.pkl
     desc: "Clean, engineer features, and split data"
    
