@@ -31,7 +31,7 @@ stages:
       - data/processed/train.csv
       - data/processed/test.csv
       - config/config.yaml
-    outs:
+    outs: 
       - models/model_random_forest.pkl
       - models/metadata_random_forest.json
     desc: "Train model with MLflow tracking"
