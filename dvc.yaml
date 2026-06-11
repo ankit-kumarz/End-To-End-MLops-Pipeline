@@ -25,7 +25,7 @@ stages:
    
   # Stage 3: Model Training
   train:
-    cmd: python src/train.py
+    cmd: python src/train.py 
     deps:
       - src/train.py
       - data/processed/train.csv
