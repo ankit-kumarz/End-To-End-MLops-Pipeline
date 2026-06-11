@@ -4,7 +4,7 @@ stages:
     cmd: python src/validate_data.py
     deps:
       - src/validate_data.py
-      - data/raw/dataset.csv
+      - data/raw/dataset.csv 
     outs:
       - data/processed/reference_stats.json 
     desc: "Validate raw data quality and schema"  
