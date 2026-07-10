@@ -94,7 +94,7 @@ dvc repro  # Run the entire pipeline
 
 ## 🏃 Quick Start
    
-### Generate Sample Data
+### Generate Sample Data 
   
 ```bash
 python src/generate_data.py  
