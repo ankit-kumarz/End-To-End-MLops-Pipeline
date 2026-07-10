@@ -37,7 +37,7 @@ This project demonstrates a complete MLOps system featuring:
 - Input validation using Pydantic  
 - Health checks and model info endpoints 
 - Batch prediction support 
-- Swagger UI at `/docs`
+- Swagger UI at `/docs` 
   
 ### ✅ CI/CD Pipeline   
  Automated testing on every push 
