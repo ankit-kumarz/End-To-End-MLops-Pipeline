@@ -10,12 +10,6 @@ from typing import Dict, Any
 
 
 def load_config(config_path: str = "config/config.yaml") -> Dict[str, Any]:
-    """
-    Load configuration from YAML file.
-    
-    Args:
-        config_path: Path to configuration file
-        
     Returns:
         Dictionary containing configuration parameters
     """
