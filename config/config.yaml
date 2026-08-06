@@ -30,6 +30,6 @@ serving:
   model_name: "production_model"
 
 paths:
-  models_dir: "models"
+  models_dir: "models" 
   data_dir: "data"
   logs_dir: "logs"
