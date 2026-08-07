@@ -52,7 +52,7 @@ This project demonstrates a complete MLOps system featuring:
 - API endpoint tests   
 - Code coverage tracking  
  
-## 📋 Prerequisites 
+## 📋 Prerequisites  
   
 - Python 3.11 
 - Git  
