@@ -135,7 +135,7 @@ python src/serve.py
 # Method 2: With uvicorn (recommended) 
 uvicorn src.serve:app --reload --port 8000 
 
-# Visit: http://localhost:8000/docs
+# Visit: http://localhost:8000/docs 
 ```
 
 ### Test API
