@@ -55,7 +55,7 @@ This project demonstrates a complete MLOps system featuring:
 ## 📋 Prerequisites 
   
 - Python 3.11 
-- Git 
+- Git  
 - Virtual environment (venv)     
    
 ## 🔧 Installation  
