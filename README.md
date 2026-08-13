@@ -179,7 +179,7 @@ End-To-End-MLops-Pipeline/
 │       ├── data-validation.yml     # Data quality checks
 │       ├── model-training.yml      # Training pipeline
 │       ├── deploy-api.yml          # Deployment pipeline
-│       └── schedule-retrain.yml    # Scheduled retraining
+│       └── schedule-retrain.yml    # Scheduled retraining 
 │
 ├── config/
 │   └── config.yaml         # Centralized configuration 
