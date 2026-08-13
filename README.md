@@ -182,7 +182,7 @@ End-To-End-MLops-Pipeline/
 │       └── schedule-retrain.yml    # Scheduled retraining
 │
 ├── config/
-│   └── config.yaml         # Centralized configuration
+│   └── config.yaml         # Centralized configuration 
 │
 ├── data/
 │   ├── raw/                # Raw data (DVC tracked)
