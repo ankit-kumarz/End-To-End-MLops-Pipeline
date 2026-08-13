@@ -112,7 +112,7 @@ python src/data_pipeline.py
 # Or run the entire DVC pipeline 
 dvc repro   
 ```
-
+ 
 ### Train Model
   
 ```bash 
