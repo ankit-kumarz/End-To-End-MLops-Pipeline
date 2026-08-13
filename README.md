@@ -149,7 +149,7 @@ curl -X POST http://localhost:8000/predict \
   -H "Content-Type: application/json" \
   -d '{ 
     "feature_1": 0.5,
-    "feature_2": 1.2,
+    "feature_2": 1.2, 
     "feature_3": -0.3,
     "feature_4": 75.5,
     "feature_5": 5
