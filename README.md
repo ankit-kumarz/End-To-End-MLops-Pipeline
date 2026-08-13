@@ -116,7 +116,7 @@ dvc repro
 ### Train Model
   
 ```bash 
-python src/train.py
+python src/train.py 
 ``` 
 
 ### Start MLflow UI 
