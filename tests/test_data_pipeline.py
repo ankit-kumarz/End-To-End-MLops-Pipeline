@@ -59,7 +59,7 @@ class TestDataPipeline:
         })
         
         df_features = engineer_features(df)
-        
+         
         # Check expected features exist
         expected_features = [
             'feature_1_squared',
