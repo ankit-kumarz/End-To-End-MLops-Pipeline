@@ -98,7 +98,7 @@ class TestDataPipeline:
         df = pd.DataFrame({ 
             'feature_1': [2.0],
             'feature_2': [3.0],
-            'feature_3': [1.0],
+            'feature_3': [1.0], 
             'feature_4': [50.0],
             'feature_5': [5],
             'target': [0]
