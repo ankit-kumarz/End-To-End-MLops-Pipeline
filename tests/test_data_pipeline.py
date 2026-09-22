@@ -95,7 +95,7 @@ class TestDataPipeline:
     
     def test_engineer_features_interactions(self):
         """Test interaction feature creation"""
-        df = pd.DataFrame({
+        df = pd.DataFrame({ 
             'feature_1': [2.0],
             'feature_2': [3.0],
             'feature_3': [1.0],
