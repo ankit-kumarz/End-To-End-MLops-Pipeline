@@ -220,7 +220,7 @@ End-To-End-MLops-Pipeline/
 
 ## 🔄 DVC Pipeline
 
-The automated pipeline consists of three stages:
+The automated pipeline consists of three stages: 
 
 ```yaml
 stages:
