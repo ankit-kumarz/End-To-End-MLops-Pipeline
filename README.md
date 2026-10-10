@@ -231,7 +231,7 @@ stages:
 
 Run the entire pipeline:
 
-```bash
+```bash 
 dvc repro
 ```
 
