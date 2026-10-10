@@ -1,4 +1,4 @@
-# End-to-End MLOps Pipeline
+# End-to-End MLOps Pipeline 
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![DVC](https://img.shields.io/badge/DVC-3.65.0-orange.svg)](https://dvc.org/)
